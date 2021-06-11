@@ -4,6 +4,7 @@ var firstNum = null;
 var secondNum = null;
 var operator = null;
 var operatorCheck;
+var currentNum;
 
 //Operator function
 function operate(firstNum, secondNum, operator) {
@@ -59,11 +60,12 @@ function divide(firstNum, secondNum) {
 function screenRefresh(input)
 {    
     //Numbers
-    if((/\d/.test(input) || input == ".") && (screen.innerText.length < 13))
+    if((/\d/.test(input) || input == ".") && (screen.innerText.length < 11))
     {    
         //Refresh if operator chosen
         if(operatorCheck == true)
         {
+            currentNum = 2;
             operatorCheck = false;
             screen.innerText = "";
         }
@@ -83,12 +85,14 @@ function screenRefresh(input)
         //backspace
         screen.innerText = screen.innerText.slice(0,-1);
     }
-    else{
-        if(firstNum != null)
+    else if(/\D/.test(input)){
+        if(currentNum == 2)
         {
             secondNum = screen.innerText;
+            currentNum = null;
         }
-        else if(secondNum == null){
+        if(firstNum == null)
+        {
             firstNum = screen.innerText;
         }
 
@@ -99,6 +103,7 @@ function screenRefresh(input)
             {
                 //When number is pressed after equals start new calculation
                 firstNum = operate(firstNum,secondNum,operator);//continue operation
+                secondNum = null;
             }
         }
         else{
@@ -126,6 +131,7 @@ function clear()
     //clear calculator
     firstNum = null;
     secondNum = null;
+    currentNum = null;
     operator = null;
     screen.innerText = "";
 }
