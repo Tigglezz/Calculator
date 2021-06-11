@@ -67,9 +67,10 @@ function screenRefresh(input)
             operatorCheck = false;
             screen.innerText = "";
         }
-        
+      
         //Add to screen
         screen.innerText += input;
+
     }
     //Operators
     else if(input == "c")
@@ -83,19 +84,22 @@ function screenRefresh(input)
         screen.innerText = screen.innerText.slice(0,-1);
     }
     else{
-        if(firstNum == null)
+        if(firstNum != null)
         {
-            firstNum = screen.innerText;
-        }
-        else{
             secondNum = screen.innerText;
         }
-        
+        else if(secondNum == null){
+            firstNum = screen.innerText;
+        }
+
         //Get result
         if(input == "=")
         {   
-            //When number is pressed after equals start new calculation
-            firstNum = operate(firstNum,secondNum,operator);//continue operation
+            if(secondNum != null)
+            {
+                //When number is pressed after equals start new calculation
+                firstNum = operate(firstNum,secondNum,operator);//continue operation
+            }
         }
         else{
             operator = input;//operator
@@ -107,6 +111,7 @@ function screenRefresh(input)
                 secondNum = null;
             }
         }
+
         screen.innerText = firstNum;
     }
 
