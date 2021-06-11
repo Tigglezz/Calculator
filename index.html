@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+    </head>
+
+    <body>
+        <h1>Calculator</h1>
+        <div class="main">
+            <div class="calculatorContainer">
+
+                <div class="calculatorScreen" id="screen">
+                </div>
+
+                <div class="calculatorButtons">
+                    <button class="clear" value="c" onclick="screenRefresh(value)">CLEAR</button>
+                    <button class="delete" value="d" onclick="screenRefresh(value)">DELETE</button>
+
+                    <button class="numButton" value=7 onclick="screenRefresh(value)">7</button>
+                    <button class="numButton" value=8 onclick="screenRefresh(value)">8</button>
+                    <button class="numButton" value=9 onclick="screenRefresh(value)">9</button>
+                    <button class="operateButton" value="÷" onclick="screenRefresh(value)">÷</button>
+
+                    <button class="numButton" value=4 onclick="screenRefresh(value)">4</button>
+                    <button class="numButton" value=5 onclick="screenRefresh(value)">5</button>
+                    <button class="numButton" value=6 onclick="screenRefresh(value)">6</button>
+                    <button class="operateButton" value="×" onclick="screenRefresh(value)">×</button>
+
+                    <button class="numButton" value=1 onclick="screenRefresh(value)">1</button>
+                    <button class="numButton" value=2 onclick="screenRefresh(value)">2</button>
+                    <button class="numButton" value=3 onclick="screenRefresh(value)">3</button>
+                    <button class="operateButton" value="-" onclick="screenRefresh(value)">−</button>
+
+                    <button class="numButton" value="." onclick="screenRefresh(value)">.</button>
+                    <button class="numButton" value=0 onclick="screenRefresh(value)">0</button>
+                    <button class="operateButton" value="=" onclick="screenRefresh(value)">=</button>
+                    <button class="operateButton" value="+" onclick="screenRefresh(value)">+</button>
+                </div>
+            </div>
+        </div>
+  
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+</html>
