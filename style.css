@@ -10,6 +10,13 @@
     font-family:'patrick';
     src: url('fonts/PatrickHand-Regular.ttf');
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class="calculatorContainer"] {
+      width: 100%;
+    }
+
 body{
     text-align: center;
 }
