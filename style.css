@@ -1,10 +1,27 @@
+@font-face{
+    font-family:'digital';
+    src: url('fonts/digital-7\ \(mono\).ttf');
+}
+@font-face{
+    font-family:'league';
+    src: url('fonts/LeagueSpartan-Bold.otf');
+}
+@font-face{
+    font-family:'patrick';
+    src: url('fonts/PatrickHand-Regular.ttf');
+}
 body{
     text-align: center;
 }
 h1{
-    font-family:'Lucida Sans';
+    font-size: 3em;
+    color: rgb(14, 4, 112);
+    font-family:'patrick';
 }
 .main{
+    padding: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
     background-color: rgba(39, 101, 155, 0.281);
 }
 
@@ -18,6 +35,7 @@ h1{
 }
 
 #screen{
+    font-family:'digital';
     margin: 15px;
     word-wrap: break-word;
     overflow: hidden;
@@ -28,8 +46,7 @@ h1{
     text-align: right;
     background-color: gray;
     color: white;
-    transform: skew(0.5deg);
-    font-size: 4em;
+    font-size: 5em;
     box-shadow: 0 0 0 3px rgb(126, 110, 141),
                 0 0 0 5px rgb(69, 55, 83);
 
@@ -48,7 +65,11 @@ button{
     border-radius: 5px;
     font-size: 1.8em;
     font-weight: 500;
-    font-family: 'Segoe UI';
+    font-family: 'league';
+    padding-top: 5px;
+    margin: 5px;
+    box-shadow: 0 0 0 1px rgb(126, 110, 141),
+                0 0 0 3px rgb(69, 55, 83);
 }
 button:hover{
     opacity: 80%;
@@ -57,6 +78,7 @@ button:active{
     opacity: 40%;
     border: 3px inset black;
 }
+
 
 .clear{
     grid-column: 1/3;

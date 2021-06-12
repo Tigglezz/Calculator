@@ -5,6 +5,8 @@ var secondNum = null;
 var operator = null;
 var operatorCheck;
 var currentNum;
+var result;
+
 
 //Operator function
 function operate(firstNum, secondNum, operator) {
@@ -62,6 +64,14 @@ function screenRefresh(input)
     //Numbers
     if((/\d/.test(input) || input == ".") && (screen.innerText.length < 11))
     {    
+        //New calculation
+        if(result != null)
+        {
+            screen.innerText = "";
+            firstNum = null;
+            result = null;
+        }
+
         //Refresh if operator chosen
         if(operatorCheck == true)
         {
@@ -69,9 +79,12 @@ function screenRefresh(input)
             operatorCheck = false;
             screen.innerText = "";
         }
-      
+        
         //Add to screen
         screen.innerText += input;
+        
+      
+        
 
     }
     //Operators
@@ -86,6 +99,7 @@ function screenRefresh(input)
         screen.innerText = screen.innerText.slice(0,-1);
     }
     else if(/\D/.test(input)){
+     
         if(currentNum == 2)
         {
             secondNum = screen.innerText;
@@ -103,8 +117,13 @@ function screenRefresh(input)
             {
                 //When number is pressed after equals start new calculation
                 firstNum = operate(firstNum,secondNum,operator);//continue operation
+                //Set result
+                result = firstNum;
                 secondNum = null;
             }
+
+            screen.innerText = firstNum;
+
         }
         else{
             operator = input;//operator
@@ -115,9 +134,11 @@ function screenRefresh(input)
                 firstNum = operate(firstNum,secondNum,operator);//continue operation
                 secondNum = null;
             }
+
+            screen.innerText = firstNum;
+
         }
 
-        screen.innerText = firstNum;
     }
 
     //console.log(firstNum + "\n");
@@ -133,6 +154,8 @@ function clear()
     secondNum = null;
     currentNum = null;
     operator = null;
+    result = null;
+    operatorCheck = false;
     screen.innerText = "";
 }
 
