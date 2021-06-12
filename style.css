@@ -11,11 +11,6 @@
     src: url('fonts/PatrickHand-Regular.ttf');
 }
 
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class="calculatorContainer"] {
-      width: 100%;
-    }
 
 body{
     text-align: center;
@@ -26,10 +21,7 @@ h1{
     color: rgb(14, 4, 112);
     font-family:'patrick';
 }
-.main{
-    padding: 20px;
-    margin-right: 50px;
-    margin-left: 50px;
+.main{  
     background-color: rgba(39, 101, 155, 0.281);
 }
 
