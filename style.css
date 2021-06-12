@@ -13,6 +13,7 @@
 body{
     text-align: center;
 }
+
 h1{
     font-size: 3em;
     color: rgb(14, 4, 112);
@@ -29,8 +30,6 @@ h1{
     border: 5px ridge black;
     display: inline-block;
     background-color: rgb(107, 93, 121);
-    margin: 5px;
-    padding: 10px;
     border-radius: 10px;
 }
 
