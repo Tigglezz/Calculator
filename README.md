@@ -1,6 +1,6 @@
 # Calculator
 
-Project from TOP to create calculator using HTML, CSS and Vanilla JS.
+Project to create calculator using HTML, CSS and Vanilla JS.
 
 From The Odin Project's [curriculum](https://www.theodinproject.com/courses/foundations/lessons/calculator).
 
