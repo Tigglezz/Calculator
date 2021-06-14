@@ -86,7 +86,7 @@ function screenRefresh(input)
         //backspace
         screen.innerText = screen.innerText.slice(0,-1);
     }
-    else if(/\D/.test(input)){
+    else if(/\D/.test(input) && operatorCheck != true){
         //Store number
         getNumber();
 

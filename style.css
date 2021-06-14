@@ -86,3 +86,11 @@ button:active{
     grid-column: 3/5;
 }
 
+.icons{
+}
+.icons img{
+    margin: 2px;
+    height: 32px;
+    width: 32px;
+}
+
