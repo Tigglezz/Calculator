@@ -27,7 +27,7 @@ From The Odin Project's [curriculum](https://www.theodinproject.com/courses/foun
 
 * Used **Git** and **GitHub** for project management.
 * **Cross tested** on Firefox and Chromium based browsers.
-
+* Learned about keyboard events in **javascript**
 ## Summary
 
 * Simple project to reinforce **javascript** 
