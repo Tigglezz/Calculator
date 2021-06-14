@@ -14,21 +14,29 @@
 
 body{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'patrick';
 }
 
 h1{
-    font-size: 3em;
-    color: rgb(14, 4, 112);
+    font-size: 4em;
+    color: rgb(117, 16, 212);
+    -webkit-text-stroke: 0.5px rgb(37, 27, 27);
     font-family:'patrick';
 }
 .main{  
-    background-color: rgba(39, 101, 155, 0.281);
+    border-radius: 2px;
+    padding: 20px;
+    margin-top: -20px;
+    background-color: rgba(39, 101, 155, 0.329);
 }
 
 .calculatorContainer{
-    border: 5px ridge black;
+    border: 5px outset black;
     display: inline-block;
-    background-color: rgb(107, 93, 121);
+    background-color: rgb(90, 66, 156);
     border-radius: 10px;
 }
 
@@ -86,7 +94,8 @@ button:active{
     grid-column: 3/5;
 }
 
-.icons{
+footer{
+    margin: 20px;
 }
 .icons img{
     margin: 2px;
