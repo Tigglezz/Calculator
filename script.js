@@ -4,9 +4,6 @@ var firstNum = null;
 var secondNum = null;
 var operator = null;
 var operatorCheck;
-var currentNum;
-var result;
-
 
 //Operator function
 function operate(firstNum, secondNum, operator) {
@@ -17,26 +14,13 @@ function operate(firstNum, secondNum, operator) {
     switch(operator)
     {
         case "+":
-            return add(firstNum, secondNum)
-        break;
-
+            return add(firstNum, secondNum);
         case "-":
             return subtract(firstNum, secondNum);
-
-        break;
-
         case "×":
             return multiply(firstNum, secondNum);
-
-        break;
-
         case "÷":
             return divide(firstNum, secondNum);
-        break;
-
-        default:
-    
-        break;
     }    
 };
 
@@ -61,7 +45,6 @@ function divide(firstNum, secondNum) {
 //Function to add numbers to screen and store them
 function screenRefresh(input)
 {    
-   
     //Numbers
     if((/\d/.test(input) || input == ".") && (screen.innerText.length < 11))
     {    
@@ -81,27 +64,35 @@ function screenRefresh(input)
         //clear calculator
         clear();
     }
-    else if(input == "d")
+    else if(input == "d" || input=="Backspace")
     {
-        //backspace
+        //backspace -- reset number 
+        if(secondNum == null){firstNum = null; operatorCheck=false}
         screen.innerText = screen.innerText.slice(0,-1);
     }
-    else if(/\D/.test(input) && operatorCheck != true){
-        //Store number
-        getNumber();
+    else if(/\D/.test(input)){
+        if(operatorCheck != true){
+            //Store number
+            getNumber();
 
-        if(firstNum != null && secondNum != null)
-        {
-            if(operator != "=")
+            if(firstNum != null && secondNum != null)
             {
-                firstNum =  operate(firstNum,secondNum,operator);
+                if(operator != "=")
+                {
+                    firstNum =  operate(firstNum,secondNum,operator);
+                }
+
+                screen.innerText = firstNum;
+                secondNum = null;
             }
-            screen.innerText = firstNum;
-            secondNum = null;
+            
+            operatorCheck = true;
+            operator = input;//operator
+        }else if(input != operator)
+        {
+            operator = input;
         }
-         
-        operatorCheck = true;
-        operator = input;//operator
+        
     }
 };
 
@@ -110,9 +101,7 @@ function clear()
     //clear calculator
     firstNum = null;
     secondNum = null;
-    currentNum = null;
     operator = null;
-    result = null;
     operatorCheck = false;
     screen.innerText = "";
 }
@@ -130,14 +119,11 @@ function getNumber()
 }
 
 
-/*TEST
-var firstNum = prompt("First Num?");
-var operator = prompt("Operator?");
-var secondNum = prompt("Second Num?");
-        console.log("first = " + firstNum);
-        console.log("op = " + operator);
-        console.log("second = " + secondNum);
-        console.log("result = " + result);
+let elem = document.getElementById('');
 
-console.log(operate(firstNum,secondNum,operator));
-*/
+document.addEventListener("keydown", function (event) {
+    // The parameter event is of the type KeyboardEvent
+    var key = event.key;
+    if(key == "Enter"){key = "="};
+    screenRefresh(event.key);
+});
