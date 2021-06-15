@@ -39,7 +39,7 @@ function divide(firstNum, secondNum) {
         return "No";//Math error divide by zero
     }
 
-    return firstNum / secondNum;
+    return (firstNum / secondNum).toFixed(2);
 };
 
 //Function to add numbers to screen and store them
