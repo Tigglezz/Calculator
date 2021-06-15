@@ -4,6 +4,7 @@ var firstNum = null;
 var secondNum = null;
 var operator = null;
 var operatorCheck;
+var result;
 
 //Operator function
 function operate(firstNum, secondNum, operator) {
@@ -49,7 +50,12 @@ function screenRefresh(input)
     if((/\d/.test(input) || input == ".") && (screen.innerText.length < 11))
     {    
         //Add to screen
-        if(operatorCheck == true)
+        if(result != null)
+        {
+            screen.innerText = input;
+            result = null;
+        }
+        else if(operatorCheck == true)
         {
             screen.innerText = input;
             operatorCheck = false;
@@ -74,25 +80,33 @@ function screenRefresh(input)
         if(operatorCheck != true){
             //Store number
             getNumber();
-
+           
             if(firstNum != null && secondNum != null)
             {
                 if(operator != "=")
                 {
                     firstNum =  operate(firstNum,secondNum,operator);
+                    screen.innerText = firstNum;
+                }
+                else{
+                    result = operate(firstNum,secondNum,operator);
+                    firstNum = null; secondNum = null;
+                    getNumber();
                 }
 
-                screen.innerText = firstNum;
                 secondNum = null;
             }
             
             operatorCheck = true;
             operator = input;//operator
+
         }else if(input != operator)
         {
             operator = input;
         }
         
+     
+
     }
 };
 
