@@ -33,11 +33,7 @@ h1{
     -webkit-text-stroke: 0.5px rgb(37, 27, 27);
     font-family:'patrick';
 }
-.main{  
-   
-}
-
-.calculatorContainer{
+#calculatorContainer{
     border: 5px outset black;
     display: inline-block;
     background-color: rgb(90, 66, 156);
@@ -63,7 +59,7 @@ h1{
 
 }
 
-.calculatorButtons{
+#calculatorButtons{
     display: grid;
     grid-template-columns: repeat(4, 80px [col-start]);
     grid-template-rows: repeat(5, 80px [row-start]);
@@ -71,6 +67,10 @@ h1{
     column-gap: 5px;
     margin: 10px;
 }
+.operateButton, .delete{
+    background-color: rgb(201, 200, 186);
+}
+
 button{
     border: 2px outset black;
     border-radius: 5px;
@@ -102,7 +102,7 @@ button:active{
 footer{
     margin: 20px;
 }
-.icons img{
+#icons img{
     margin: 2px;
     height: 32px;
     width: 32px;
